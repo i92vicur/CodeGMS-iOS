@@ -5,8 +5,8 @@
 **Disclaimer:** First of all, sorry if there are some inconsistencies in the name of the application (for example, in the logo and title it appears as CodeGMS and in the directory as YourGameData). This is due to the fact that hours before the delivery of the application the mac I had rented in the cloud was completely down, and therefore I had to upload an old version of the application. I am very sorry for any confusion caused by this.
 
 **Requisites**
--**Xcode version:** 15.01 / 15.1
--**iOS Version:** 17.2
+  - **Xcode version:** 15.01 / 15.1
+  - **iOS Version:** 17.2
 
 - **Basic Operation:**
   Navigating through the application is very fast and intuitive. There are two distinct parts to highlight:
