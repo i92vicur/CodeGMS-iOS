@@ -42,7 +42,8 @@ struct AllGamesView: View {
             if viewModel.isLoading {
                 ProgressView()
             } else if !viewModel.games.isEmpty {
-                // Mostrar la lista de juegos
+                
+                // Games List
                 List {
                     ForEach(viewModel.games, id: \.id) { game in
                         // Card para mostrar los juegos
@@ -85,7 +86,7 @@ struct AllGamesView: View {
                         }
                     }
                     .onAppear {
-                        // Cargar más juegos cuando llegamos al final de la lista
+                        // Pagination
                         if let nextPage = viewModel.nextPage,
                            let lastGame = viewModel.games.last,
                            let lastGameId = Int(lastGame.slug.components(separatedBy: "-").last ?? ""),
@@ -95,10 +96,8 @@ struct AllGamesView: View {
                     }
                 }
             } else if let error = viewModel.error {
-                // Mostrar un mensaje de error
                 Text("Error: \(error.localizedDescription)")
             } else {
-                // Mensaje para cuando no hay juegos
                 Text("No games available.")
             }
         }
@@ -106,7 +105,7 @@ struct AllGamesView: View {
     
     private func filterGames() {
         if searchText.isEmpty {
-            viewModel.loadGames() // Cargar todos los juegos nuevamente
+            viewModel.loadGames() 
         } else {
             viewModel.games = viewModel.games.filter { $0.name.lowercased().contains(searchText.lowercased()) }
         }
